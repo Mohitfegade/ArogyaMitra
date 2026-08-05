@@ -89,7 +89,7 @@ export function AuthProvider({ children }) {
     setProfileLoading(true);
     const { data, error } = await supabase
       .from('profiles')
-      .upsert({ id: user.id, ...updates, created_at: new Date() })
+      .upsert({ id: user.id, ...updates, updated_at: new Date().toISOString() })
       .select()
       .single();
 
