@@ -1,0 +1,83 @@
+/* ─── Desktop Sidebar (Hidden on mobile) ──────────────────── */
+.app-sidebar {
+  display: none;
+  width: var(--sidebar-width);
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  color: var(--gray-700);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+.sidebar-link:hover {
+  background: var(--gray-50);
+  color: var(--gray-900);
+}
+.sidebar-link.active {
+  background: var(--green-50);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+}
+.sidebar-link .icon {
+  font-size: 20px;
+}
+
+/* ─── Desktop Layout Adjustments ──────────────────────────── */
+@media (min-width: 768px) {
+  .app-sidebar {
+    display: flex;
+  }
+  
+  .bottom-nav {
+    display: none; /* Hide bottom nav on desktop */
+  }
+
+  /* Offset main content by sidebar width */
+  .app-shell {
+    padding-left: var(--sidebar-width);
+  }
+
+  .app-header {
+    /* Header only covers main content area */
+    width: calc(100% - var(--sidebar-width));
+    margin-left: auto;
+  }
+
+  .page-content {
+    padding-bottom: 0; /* Remove bottom nav padding */
+  }
+
+  .chat-page {
+    height: calc(100vh - var(--header-height));
+  }
+}

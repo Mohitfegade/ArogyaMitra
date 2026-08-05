@@ -1,0 +1,10 @@
+@import './styles/design-tokens.css';
+@import './App.css';
+@import './styles/navigation.css';
+@import './styles/dashboard.css';
+@import './styles/chat.css';
+
+/* 
+  Global ArogyaMitra Styles 
+  All specific component styles have been broken out into the files imported above.
+*/

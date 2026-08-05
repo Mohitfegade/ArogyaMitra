@@ -1,0 +1,112 @@
+[
+  {
+    "id": "ayushman-bharat",
+    "name": "Ayushman Bharat – PM Jan Arogya Yojana",
+    "name_hi": "आयुष्मान भारत – प्रधानमंत्री जन आरोग्य योजना",
+    "name_mr": "आयुष्मान भारत – पंतप्रधान जन आरोग्य योजना",
+    "description": "Provides health cover of ₹5 lakh per family per year for secondary and tertiary care hospitalization.",
+    "description_hi": "परिवार को प्रति वर्ष ₹5 लाख तक का मुफ्त इलाज मिलता है।",
+    "description_mr": "कुटुंबाला दरवर्षी ₹5 लाखापर्यंत मोफत उपचार मिळतात.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "Below ₹2,50,000", "age": "any" },
+    "keywords": ["hospital", "treatment", "free", "health card", "ayushman", "health insurance", "free treatment", "health scheme", "yojana", "अस्पताल", "इलाज", "मुफ्त"]
+  },
+  {
+    "id": "pm-matru-vandana",
+    "name": "Pradhan Mantri Matru Vandana Yojana (PMMVY)",
+    "name_hi": "प्रधानमंत्री मातृ वंदना योजना",
+    "name_mr": "प्रधानमंत्री मातृ वंदना योजना",
+    "description": "Cash incentive of ₹5,000 for pregnant and lactating mothers for the first live birth.",
+    "description_hi": "पहले बच्चे के लिए गर्भवती और स्तनपान कराने वाली माताओं को ₹5,000 मिलते हैं।",
+    "description_mr": "पहिल्या बाळासाठी गर्भवती आणि स्तनदा मातांना ₹5,000 मिळतात.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "age": "any", "gender": "female" },
+    "keywords": ["pregnant", "maternity", "mother", "baby", "delivery", "garbhavati", "गर्भवती", "माँ", "बच्चा", "prasav", "प्रसव", "matru"]
+  },
+  {
+    "id": "janani-suraksha",
+    "name": "Janani Suraksha Yojana (JSY)",
+    "name_hi": "जननी सुरक्षा योजना",
+    "name_mr": "जननी सुरक्षा योजना",
+    "description": "Cash assistance to promote institutional delivery among pregnant women in low-income households.",
+    "description_hi": "गर्भवती महिलाओं को अस्पताल में प्रसव के लिए नकद सहायता मिलती है।",
+    "description_mr": "गर्भवती महिलांना रुग्णालयात प्रसवासाठी रोख मदत मिळते.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS"], "income": "Below ₹1,00,000", "age": "any", "gender": "female" },
+    "keywords": ["delivery", "hospital delivery", "pregnant", "janani", "suraksha", "प्रसव", "जननी", "सुरक्षा"]
+  },
+  {
+    "id": "rashtriya-swasthya-bima",
+    "name": "Rashtriya Swasthya Bima Yojana (RSBY)",
+    "name_hi": "राष्ट्रीय स्वास्थ्य बीमा योजना",
+    "name_mr": "राष्ट्रीय स्वास्थ्य विमा योजना",
+    "description": "Health insurance for BPL families covering hospitalization costs up to ₹30,000.",
+    "description_hi": "बीपीएल परिवारों को ₹30,000 तक का स्वास्थ्य बीमा मिलता है।",
+    "description_mr": "BPL कुटुंबांना ₹30,000 पर्यंत आरोग्य विमा मिळतो.",
+    "eligibility": { "category": ["SC", "ST", "EWS"], "income": "BPL", "age": "any" },
+    "keywords": ["bpl", "insurance", "bima", "hospitalization", "बीमा", "बीपीएल", "विमा"]
+  },
+  {
+    "id": "national-health-mission",
+    "name": "National Health Mission (NHM)",
+    "name_hi": "राष्ट्रीय स्वास्थ्य मिशन",
+    "name_mr": "राष्ट्रीय आरोग्य अभियान",
+    "description": "Free healthcare services including medicines, diagnostics, and treatment at government health facilities.",
+    "description_hi": "सरकारी अस्पतालों में मुफ्त दवाएं, जांच और इलाज।",
+    "description_mr": "सरकारी रुग्णालयांमध्ये मोफत औषधे, चाचण्या आणि उपचार.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "age": "any" },
+    "keywords": ["free medicine", "free doctor", "phc", "primary health", "nhm", "मुफ्त दवा", "मोफत औषध"]
+  },
+  {
+    "id": "pm-surakshit-matritva",
+    "name": "Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA)",
+    "name_hi": "प्रधानमंत्री सुरक्षित मातृत्व अभियान",
+    "name_mr": "प्रधानमंत्री सुरक्षित मातृत्व अभियान",
+    "description": "Free antenatal checkup on the 9th of every month at government health facilities.",
+    "description_hi": "हर महीने की 9 तारीख को सरकारी अस्पताल में मुफ्त गर्भावस्था जांच।",
+    "description_mr": "दर महिन्याच्या 9 तारखेला सरकारी रुग्णालयात मोफत प्रसवपूर्व तपासणी.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "gender": "female" },
+    "keywords": ["checkup", "antenatal", "pregnancy checkup", "9th", "matritva", "मातृत्व", "जांच"]
+  },
+  {
+    "id": "mission-indradhanush",
+    "name": "Mission Indradhanush",
+    "name_hi": "मिशन इंद्रधनुष",
+    "name_mr": "मिशन इंद्रधनुष",
+    "description": "Free immunization for children under 2 years and pregnant women against 12 vaccine-preventable diseases.",
+    "description_hi": "2 साल तक के बच्चों और गर्भवती महिलाओं को 12 बीमारियों से मुफ्त टीकाकरण।",
+    "description_mr": "2 वर्षांखालील मुलांना आणि गर्भवती महिलांना 12 आजारांवर मोफत लसीकरण.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "age": "below 2 or pregnant" },
+    "keywords": ["vaccine", "vaccination", "tika", "child", "टीका", "टीकाकरण", "indradhanush", "इंद्रधनुष"]
+  },
+  {
+    "id": "anemia-mukt-bharat",
+    "name": "Anemia Mukt Bharat",
+    "name_hi": "एनीमिया मुक्त भारत",
+    "name_mr": "अशक्तपणामुक्त भारत",
+    "description": "Free iron-folic acid supplements and deworming for children, adolescents, and pregnant women.",
+    "description_hi": "बच्चों, किशोरियों और गर्भवती महिलाओं को मुफ्त आयरन की गोलियां।",
+    "description_mr": "मुलांना, किशोरवयीन मुलींना आणि गर्भवती महिलांना मोफत लोह-फॉलिक ऍसिड गोळ्या.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "age": "under 19 or pregnant" },
+    "keywords": ["anemia", "iron", "weak", "khoon", "खून", "कमज़ोरी", "anemia", "एनीमिया", "खून की कमी"]
+  },
+  {
+    "id": "pradhan-mantri-arogya-mitra",
+    "name": "PM-ABHIM (Ayushman Bharat Health Infrastructure Mission)",
+    "name_hi": "आयुष्मान भारत स्वास्थ्य अवसंरचना मिशन",
+    "name_mr": "आयुष्मान भारत आरोग्य पायाभूत सुविधा मिशन",
+    "description": "Strengthening public health infrastructure including labs, ICUs, and critical care blocks in every district.",
+    "description_hi": "हर जिले में सरकारी लैब, ICU और क्रिटिकल केयर सुविधाएं।",
+    "description_mr": "प्रत्येक जिल्ह्यात सरकारी लॅब, ICU आणि क्रिटिकल केअर सुविधा.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "age": "any" },
+    "keywords": ["lab", "icu", "critical", "hospital", "district", "जिला", "अस्पताल"]
+  },
+  {
+    "id": "niramaya",
+    "name": "Niramaya Health Insurance Scheme",
+    "name_hi": "निरामया स्वास्थ्य बीमा योजना",
+    "name_mr": "निरामया आरोग्य विमा योजना",
+    "description": "Health insurance for persons with disabilities. Coverage up to ₹1 lakh per year at very low premium.",
+    "description_hi": "दिव्यांग व्यक्तियों के लिए ₹1 लाख तक का स्वास्थ्य बीमा।",
+    "description_mr": "दिव्यांग व्यक्तींसाठी ₹1 लाखापर्यंत आरोग्य विमा.",
+    "eligibility": { "category": ["SC", "ST", "OBC", "EWS", "General"], "income": "any", "age": "any" },
+    "keywords": ["disability", "disabled", "divyang", "दिव्यांग", "विकलांग", "special needs"]
+  }
+]
