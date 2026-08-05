@@ -298,6 +298,69 @@ body {
   border: 1px solid #fecaca;
 }
 
+/* ─── Profile Form ────────────────────────────────────────── */
+.profile-form__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.3px;
+  margin-bottom: var(--space-2);
+}
+.profile-form__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+  line-height: 1.5;
+}
+
+/* ─── Notice Message ──────────────────────────────────────── */
+.notice-message {
+  background: var(--green-50);
+  color: var(--color-primary-dark);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border: 1px solid var(--green-100);
+}
+
+/* ─── Phone + OTP Fields ──────────────────────────────────── */
+.phone-field {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-2);
+}
+.phone-field__prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--gray-100);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.otp-input {
+  text-align: center;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+}
+.helper-text {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.auth-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
 /* ─── Section Headers ─────────────────────────────────────── */
 .section-header {
   display: flex;

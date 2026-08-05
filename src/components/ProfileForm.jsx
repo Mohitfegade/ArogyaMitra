@@ -39,9 +39,15 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
   };
 
   return (
-    <div className="card">
-      <h2>{isEditing ? 'Edit Profile' : 'Complete Your Profile'}</h2>
-      {!isEditing && <p>We need a few details to provide you with the best guidance.</p>}
+    <div className="profile-form">
+      <h2 className="profile-form__title">
+        {isEditing ? 'Edit Profile' : 'Complete Your Profile'}
+      </h2>
+      {!isEditing && (
+        <p className="profile-form__subtitle">
+          We need a few details to provide you with the best guidance.
+        </p>
+      )}
       
       {error && <div className="error-message">{error}</div>}
 
@@ -55,7 +61,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             value={formData.full_name}
             onChange={handleChange}
             required
-            className="large-input"
+            className="form-input large-input"
             placeholder="e.g. Ramesh Kumar"
           />
         </div>
@@ -69,7 +75,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             value={formData.age}
             onChange={handleChange}
             required
-            className="large-input"
+            className="form-input large-input"
             min="1"
             max="120"
           />
@@ -83,7 +89,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             value={formData.state} 
             onChange={handleChange} 
             required 
-            className="large-input"
+            className="form-select"
           >
             <option value="">Select your state</option>
             <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -124,7 +130,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             name="category" 
             value={formData.category} 
             onChange={handleChange} 
-            className="large-input"
+            className="form-select"
           >
             <option value="General">General</option>
             <option value="OBC">OBC</option>
@@ -141,7 +147,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             name="income_range" 
             value={formData.income_range} 
             onChange={handleChange} 
-            className="large-input"
+            className="form-select"
           >
             <option value="Below ₹50,000">Below ₹50,000</option>
             <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
@@ -160,7 +166,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             value={formData.family_size}
             onChange={handleChange}
             required
-            className="large-input"
+            className="form-input large-input"
             min="1"
             max="20"
           />
@@ -173,7 +179,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
             name="preferred_language" 
             value={formData.preferred_language} 
             onChange={handleChange} 
-            className="large-input"
+            className="form-select"
           >
             <option value="Hindi">Hindi</option>
             <option value="Marathi">Marathi</option>
@@ -182,11 +188,11 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
         </div>
 
         <div className="button-group" style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-          <button type="submit" className="primary-btn" disabled={loading}>
+          <button type="submit" className="btn btn--primary" disabled={loading}>
             {loading ? 'Saving...' : 'Save Profile'}
           </button>
           {isEditing && !hideCancel && (
-            <button type="button" className="secondary-btn" onClick={onCancel} disabled={loading}>
+            <button type="button" className="btn btn--secondary" onClick={onCancel} disabled={loading}>
               Cancel
             </button>
           )}
@@ -195,7 +201,7 @@ export default function ProfileForm({ isEditing = false, onCancel = null, hideCa
       
       {!isEditing && (
         <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-          <button type="button" className="text-btn" onClick={signOut}>
+          <button type="button" className="btn btn--ghost" onClick={signOut}>
             Logout instead
           </button>
         </div>

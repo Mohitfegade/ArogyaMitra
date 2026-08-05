@@ -1,5 +1,9 @@
 // Helpers for Indian mobile numbers used by the phone-OTP login flow.
 
+// Demo mode: delivering real SMS requires a paid provider (Twilio/MSG91), so
+// the app accepts one fixed code and displays it on screen instead.
+export const DEMO_OTP = '123456';
+
 // Keep only digits, dropping spaces, dashes and brackets users often paste in.
 export function digitsOnly(value) {
   return (value || '').replace(/\D/g, '');

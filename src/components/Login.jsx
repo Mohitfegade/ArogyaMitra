@@ -6,6 +6,7 @@ import {
   isValidIndianMobile,
   formatForDisplay,
   describeOtpError,
+  DEMO_OTP,
 } from '../utils/phone';
 
 const RESEND_SECONDS = 30;
@@ -46,7 +47,7 @@ export default function Login() {
       await signInWithOtp(toE164India(phone));
       setStep(2);
       setCooldown(RESEND_SECONDS);
-      setNotice(`OTP sent to ${formatForDisplay(phone)}.`);
+      setNotice(`Demo mode: enter code ${DEMO_OTP} for ${formatForDisplay(phone)}.`);
       if (isResend) setOtp('');
     } catch (err) {
       setError(describeOtpError(err));
@@ -88,96 +89,114 @@ export default function Login() {
   };
 
   return (
-    <div className="card">
-      <h2>Welcome to ArogyaMitra</h2>
-      <p>Log in with your phone number to get started.</p>
-
-      {error && (
-        <div className="error-message" role="alert">
-          {error}
+    <div className="auth-card">
+        <div className="auth-logo">
+          <span className="auth-logo__icon" aria-hidden="true">
+            &#127793;
+          </span>
+          <span className="auth-logo__name">ArogyaMitra</span>
+          <p className="auth-logo__tagline">
+            Your guide to government health schemes
+          </p>
         </div>
-      )}
-      {notice && !error && (
-        <div className="notice-message" role="status">
-          {notice}
-        </div>
-      )}
 
-      {step === 1 ? (
-        <form onSubmit={handleSendOtp}>
-          <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
-            <div className="phone-field">
-              <span className="phone-prefix" aria-hidden="true">
-                +91
-              </span>
+        {error && (
+          <div className="error-message" role="alert">
+            {error}
+          </div>
+        )}
+        {notice && !error && (
+          <div className="notice-message" role="status">
+            {notice}
+          </div>
+        )}
+
+        {step === 1 ? (
+          <form onSubmit={handleSendOtp}>
+            <div className="form-group">
+              <label htmlFor="phone">Mobile number</label>
+              <div className="phone-field">
+                <span className="phone-field__prefix" aria-hidden="true">
+                  +91
+                </span>
+                <input
+                  id="phone"
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel"
+                  maxLength={10}
+                  placeholder="9876543210"
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(digitsOnly(e.target.value).slice(0, 10));
+                    setError(null);
+                  }}
+                  required
+                  disabled={loading}
+                  className="form-input large-input"
+                  aria-describedby="phone-help"
+                />
+              </div>
+              <p id="phone-help" className="helper-text">
+                Demo mode &mdash; no real SMS is sent. Any valid mobile number works and
+                the code is always <strong>{DEMO_OTP}</strong>.
+              </p>
+            </div>
+            <button
+              type="submit"
+              className="btn btn--primary"
+              disabled={loading || !phoneIsValid}
+            >
+              {loading ? 'Sending...' : 'Send OTP'}
+            </button>
+          </form>
+        ) : (
+          <form onSubmit={handleVerifyOtp}>
+            <div className="form-group">
+              <label htmlFor="otp">Enter the code for {formatForDisplay(phone)}</label>
               <input
-                id="phone"
-                type="tel"
+                id="otp"
+                ref={otpInputRef}
+                type="text"
                 inputMode="numeric"
-                autoComplete="tel"
-                maxLength={10}
-                placeholder="9876543210"
-                value={phone}
+                autoComplete="one-time-code"
+                maxLength={6}
+                placeholder="6-digit code"
+                value={otp}
                 onChange={(e) => {
-                  setPhone(digitsOnly(e.target.value).slice(0, 10));
+                  setOtp(digitsOnly(e.target.value).slice(0, 6));
                   setError(null);
                 }}
                 required
                 disabled={loading}
-                className="large-input"
-                aria-describedby="phone-help"
+                className="form-input large-input otp-input"
               />
             </div>
-            <p id="phone-help" className="helper-text">
-              We&apos;ll text you a 6-digit code. Standard SMS rates may apply.
-            </p>
-          </div>
-          <button type="submit" className="primary-btn" disabled={loading || !phoneIsValid}>
-            {loading ? 'Sending...' : 'Send OTP'}
-          </button>
-        </form>
-      ) : (
-        <form onSubmit={handleVerifyOtp}>
-          <div className="form-group">
-            <label htmlFor="otp">Enter the code sent to {formatForDisplay(phone)}</label>
-            <input
-              id="otp"
-              ref={otpInputRef}
-              type="text"
-              inputMode="numeric"
-              autoComplete="one-time-code"
-              maxLength={6}
-              placeholder="6-digit code"
-              value={otp}
-              onChange={(e) => {
-                setOtp(digitsOnly(e.target.value).slice(0, 6));
-                setError(null);
-              }}
-              required
-              disabled={loading}
-              className="large-input otp-input"
-            />
-          </div>
-          <button type="submit" className="primary-btn" disabled={loading || !otpIsValid}>
-            {loading ? 'Verifying...' : 'Verify & Login'}
-          </button>
-          <button
-            type="button"
-            className="secondary-btn"
-            onClick={() => sendOtp({ isResend: true })}
-            disabled={loading || cooldown > 0}
-          >
-            {cooldown > 0 ? `Resend OTP in ${cooldown}s` : 'Resend OTP'}
-          </button>
-          <button
-            type="button"
-            className="link-btn"
-            onClick={handleChangeNumber}
-            disabled={loading}
-          >
-            Change phone number
-          </button>
+            <button
+              type="submit"
+              className="btn btn--primary"
+              disabled={loading || !otpIsValid}
+            >
+              {loading ? 'Verifying...' : 'Verify & Login'}
+            </button>
+            <div className="auth-actions">
+              <button
+                type="button"
+                className="btn btn--ghost"
+                onClick={() => sendOtp({ isResend: true })}
+                disabled={loading || cooldown > 0}
+              >
+                {cooldown > 0 ? `Resend in ${cooldown}s` : 'Resend OTP'}
+              </button>
+              <button
+                type="button"
+                className="btn btn--ghost"
+                onClick={handleChangeNumber}
+                disabled={loading}
+              >
+                Change number
+              </button>
+            </div>
         </form>
       )}
     </div>
